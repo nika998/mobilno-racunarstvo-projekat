@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/hospitals/tabs/explore"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Hospital details</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-fab-button size="small" color="tertiary" (click)="onEditHospital()">
+        <ion-icon name="pencil"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button size="small" color="tertiary" (click)="onDeleteHospital()">
+        <ion-icon name="trash"></ion-icon>
+      </ion-fab-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="secondary">
+
+  <ion-card class="ion-padding" color="tertiary">
+    <img [src]="hospital.imageUrl">
+    <ion-card-header>
+      <ion-card-title>{{hospital.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{hospital.address}}
+    </ion-card-content>
+    <ion-card-content>
+      {{hospital.phone}}
+    </ion-card-content>
+    <ion-card-content>
+      {{hospital.email}}
+    </ion-card-content>
+    <ion-card-content>
+      {{ hospital.patients.length !== 0? "Number of patients: " + hospital.patients.length : "No patients at the moment"}}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button type="submit" color="success" style="padding: 0 3% 0 3%;" expand="block" shape="round" size="medium" (click)="onAddPatient()">Add patient</ion-button>
+
+</ion-content>

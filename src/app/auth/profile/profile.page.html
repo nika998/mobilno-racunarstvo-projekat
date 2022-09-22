@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/hospitals/tabs/explore"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Profile Details</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="secondary">
+
+  <ion-card class="ion-padding" color="tertiary">
+    <img [src]="'././assets/pictures/male.jpg'">
+    <ion-card-header>
+      <ion-card-title>{{currentUser.name?currentUser.name + " " + currentUser.surname: 'Unknown'}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{currentUser.email}}
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

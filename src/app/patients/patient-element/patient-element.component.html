@@ -1,0 +1,8 @@
+<ion-item [routerLink]="['/', 'patients', 'tabs', 'explore', patient.id]">
+  <ion-avatar slot="start">
+    <ion-img *ngIf="patient.gender === 'Musko'" [src]="'./././assets/pictures/male.jpg'"></ion-img>
+    <ion-img *ngIf="patient.gender === 'Zensko'" [src]="'./././assets/pictures/female.jpg'"></ion-img>
+  </ion-avatar>
+  <ion-label>{{patient.id}}</ion-label>
+  <ion-label>{{patient.name + " " + patient.surname}}</ion-label>
+</ion-item>

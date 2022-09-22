@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/patients/tabs/explore"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Patient details</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="secondary">
+
+  <ion-card class="ion-padding" color="tertiary">
+    <ion-card-content *ngIf="patient.gender === 'Musko'">
+      <img [src]="'./././assets/pictures/male.jpg'">
+    </ion-card-content>
+    <ion-card-content *ngIf="patient.gender === 'Zensko'">
+      <img [src]="'./././assets/pictures/female.jpg'">
+    </ion-card-content>
+    
+    <ion-card-header>
+      <ion-card-title>{{patient.name + " " + patient.surname}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{patient.address}}
+    </ion-card-content>
+    <ion-card-content>
+      {{patient.phone}}
+    </ion-card-content>
+    <ion-card-content>
+      {{patient.gender}}
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,7 @@
+<ion-item [routerLink]="['/', 'hospitals', 'tabs', 'explore', hospital.id]">
+  <ion-avatar slot="start">
+    <ion-img [src]="hospital.imageUrl"></ion-img>
+  </ion-avatar>
+  <ion-label>{{hospital.name}}</ion-label>
+  <ion-icon name="bookmark-sharp" color="tertiary" (click)="onOpenAlert($event)"></ion-icon>
+</ion-item>

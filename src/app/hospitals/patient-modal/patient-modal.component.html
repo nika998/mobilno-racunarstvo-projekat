@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Add new patient</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center" padding color="secondary">
+  <form (ngSubmit)="onAddPatient()" #f="ngForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-card>
+            <ion-item color="tertiary">
+              <ion-label position="floating">Patient id</ion-label>
+              <ion-input type="text" rows="6" ngModel [ngModel]='id' name="id" required></ion-input>
+            </ion-item>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-card>
+            <ion-item color="tertiary">
+              <ion-label position="floating">Name</ion-label>
+              <ion-input type="text" ngModel [ngModel]='name' name="name" required></ion-input>
+            </ion-item>
+          </ion-card>
+        </ion-col>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-card>
+            <ion-item color="tertiary">
+              <ion-label position="floating">Surname</ion-label>
+              <ion-input type="text" ngModel [ngModel]='surname' name="surname" required></ion-input>
+            </ion-item>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-card>
+            <ion-item color="tertiary">
+              <ion-label position="floating">Address</ion-label>
+              <ion-input type="text" rows="6" ngModel [ngModel]='address' name="address" required></ion-input>
+            </ion-item>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-card>
+            <ion-item color="tertiary">
+              <ion-label position="floating">Phone</ion-label>
+              <ion-input type="text" rows="6" ngModel [ngModel]='phone' name="phone" required></ion-input>
+            </ion-item>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-card>
+          <ion-item color="tertiary">
+            <ion-select placeholder="Select gender" ngModel [ngModel]='gender' name="gender" required>
+              <ion-select-option value="Musko">Musko</ion-select-option>
+              <ion-select-option value="Zensko">Zensko</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-card>
+          <!-- <ion-card>
+            <ion-item color="tertiary">
+              <ion-label position="floating">Gender</ion-label>
+              <ion-input type="text" rows="6" ngModel [ngModel]='gender' name="gender" required></ion-input>
+            </ion-item>
+          </ion-card> -->
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-button type="submit" color="primary" expand="block" [disabled]="!f.valid">
+            Add patient
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
